@@ -1,3 +1,19 @@
-<h1>
-  {{title}}
-</h1>
+<md-toolbar color="primary" class="tt_toolbar">
+  <div fxLayout="row" fxFlex>
+    <div fxLayout="column" fxLayoutAlign="center start" fxFlex>
+      <div fxLayout="row" class="nav_buttons">
+        <button md-button routerLink="products">PRODUCTS</button>
+        <button md-button routerLink="products">OTHER</button>
+      </div>
+    </div>
+    <div fxLayout="column" fxFlex>
+      <div fxLayout="row" fxLayoutAlign="end end" class="tt_sign_in">
+        <button md-fab color="primary" (click)="openBasket()">
+          <md-icon>add_shopping_cart</md-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</md-toolbar>
+
+<router-outlet></router-outlet>

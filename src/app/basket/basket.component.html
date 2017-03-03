@@ -1,0 +1,12 @@
+<h1 md-dialog-title>Корзина</h1>
+<div md-dialog-content>
+  <div *ngFor="let product of products">
+    {{product.name}} - {{product.count}} шт.
+  </div>
+  <md-input-container *ngIf="products.length" class="example-full-width">
+    <input md-input [(ngModel)]="phoneNumber" maxlength="11" placeholder="Phone number">
+  </md-input-container>
+</div>
+<div *ngIf="products.length" md-dialog-actions>
+  <button color="primary" md-raised-button (click)="order()">Заказать</button>
+</div>

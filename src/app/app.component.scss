@@ -1,0 +1,38 @@
+
+.tt_toolbar {
+  position: fixed;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2),0 6px 10px 0 rgba(0,0,0,.14),0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+.tt_sign_in {
+  button {
+    box-shadow: none;
+  }
+  md-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    margin-right: 20px;
+  }
+}
+
+.nav_buttons {
+  span {
+    font-size: 18px !important;
+  }
+  md-button {
+    font-size: 18px !important;
+  }
+}
+
+.user_name {
+  margin-bottom: 15px;
+  margin-right: 15px;
+}
+
+.small_profile_img {
+  cursor: pointer;
+  background-size: 60px 60px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
