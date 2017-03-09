@@ -4,7 +4,7 @@
     {{product.name}} - {{product.count}} шт.
   </div>
   <md-input-container *ngIf="products.length" class="example-full-width">
-    <input md-input [(ngModel)]="phoneNumber" maxlength="11" placeholder="Phone number">
+    <input md-input [(ngModel)]="phoneNumber" maxlength="10" placeholder="Phone number">
   </md-input-container>
 </div>
 <div *ngIf="products.length" md-dialog-actions>
