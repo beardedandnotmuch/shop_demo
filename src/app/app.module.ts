@@ -9,16 +9,18 @@ import { AngularFireModule, AuthMethods, AuthProviders } from "angularfire2";
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
-import { RumorComponent, DialogAddRumorComponent } from './rumor/rumor.component';
+import { ProductComponent } from './product/product.component';
+import { BasketComponent } from './basket/basket.component';
+import { ProductService } from "./product/shared/product.service";
 
 const appRoutes: Routes = [
   {
-    path: 'rumors',
-    component: RumorComponent
+    path: 'products',
+    component: ProductComponent
   },
   {
     path: '',
-    redirectTo: '/rumors',
+    redirectTo: '/products',
     pathMatch: 'full'
   }
 ];
@@ -33,10 +35,10 @@ const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    RumorComponent,
-    DialogAddRumorComponent
+    ProductComponent,
+    BasketComponent
   ],
-  entryComponents: [DialogAddRumorComponent],
+  entryComponents: [ BasketComponent ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -49,7 +51,7 @@ const firebaseConfig = {
       method: AuthMethods.Popup
     })
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

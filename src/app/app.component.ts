@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { AngularFire, AuthProviders } from 'angularfire2';
+import { MdDialog } from '@angular/material';
+import { BasketComponent } from './basket/basket.component';
+import { Product } from './product/shared/product'
+import { ProductService } from "./product/shared/product.service";
 
 @Component({
   selector: 'app-root',
@@ -7,34 +10,22 @@ import { AngularFire, AuthProviders } from 'angularfire2';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public user = {};
-  public style = {};
+  products: Array<Product>;
   constructor(
-    public af: AngularFire
+    public dialog: MdDialog,
+    public ProductService: ProductService
   ) {
-    this.af.auth.subscribe(user => {
-      if(user) {
-        // user logged in
-        this.user = user.google;
-        this.style = {
-          'background-image': 'url(' + user.google.photoURL + ')'
-        };
-        console.log(this.user);
-      } else {
-        // user not logged in
-        this.user = {};
-      }
-    });
+    this.products = ProductService.items;
   }
 
-  login() {
-    this.af.auth.login({
-      provider: AuthProviders.Google
+  openBasket() {
+    let dialogRef = this.dialog.open(BasketComponent, {
+      width: '300px',
+      height: 'auto'
     });
-  }
 
-  logout() {
-    this.user = {};
-    this.af.auth.logout();
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    });
   }
 }

@@ -1,31 +1,15 @@
-<md-toolbar color="warn" class="tt_toolbar">
+<md-toolbar color="primary" class="tt_toolbar">
   <div fxLayout="row" fxFlex>
     <div fxLayout="column" fxLayoutAlign="center start" fxFlex>
       <div fxLayout="row" class="nav_buttons">
-        <button md-button routerLink="rumors">RUMORS</button>
-        <button md-button routerLink="rumors">TATTLERS</button>
-        <button md-button routerLink="rumors">OTHER</button>
+        <button md-button routerLink="products">PRODUCTS</button>
+        <button md-button routerLink="products">OTHER</button>
       </div>
     </div>
     <div fxLayout="column" fxFlex>
       <div fxLayout="row" fxLayoutAlign="end end" class="tt_sign_in">
-        <!-- Todo: ngStile is not working inide ngIf -->
-        <!-- <div *ngIf="user?.uid"> -->
-          <span *ngIf="user?.uid" class="user_name">{{user.displayName}}</span>
-          <span *ngIf="user?.uid" class="small_profile_img" [ngStyle]="style" [mdMenuTriggerFor]="menu"></span>
-        <!-- </div> -->
-        <md-menu #menu="mdMenu">
-          <button md-menu-item>
-            <md-icon>account_box</md-icon>
-            <span>Profile settings</span>
-          </button>
-          <button md-menu-item (click)="logout()">
-            <md-icon>directions_run</md-icon>
-            <span>Logout</span>
-          </button>
-        </md-menu>
-        <button md-fab color="warn" *ngIf="!user?.uid" (click)="login()">
-          <md-icon>&#xE853;</md-icon>
+        <button md-fab color="primary" (click)="openBasket()">
+          <md-icon>add_shopping_cart</md-icon>
         </button>
       </div>
     </div>

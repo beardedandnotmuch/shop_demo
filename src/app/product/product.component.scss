@@ -1,0 +1,36 @@
+.example-card {
+  width: 700px;
+  margin-top: 2%;
+  img {
+    max-width: 150px;
+    max-height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+.rumor_list_wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 65px;
+  overflow: auto;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.rumor_add_button {
+  position: fixed;
+  bottom: 20px;
+  right: 35px;
+}
