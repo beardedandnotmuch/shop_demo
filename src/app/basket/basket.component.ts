@@ -20,8 +20,11 @@ export class BasketComponent implements OnInit {
   }
 
   order(): void {
+    this.products = [];
+    this.ProductService.resetItems();
+    this.dialogRef.close();
+
     console.log('make an order');
-    console.log(this.phoneNumber);
   }
 
   ngOnInit() {

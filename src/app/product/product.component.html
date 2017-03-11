@@ -17,8 +17,9 @@
             {{ product.text }}
           </div>
         </md-card-content>
-        <md-card-actions>
+        <md-card-actions fxLayout="row" fxLayoutAlign="space-between">
           <button md-raised-button color="accent" (click)="collect(product)">Купить</button>
+          <span class="product_count" [hidden]="product.count === 0"><strong>{{product.count}} шт.</strong></span>
         </md-card-actions>
       </md-card>
   </div>

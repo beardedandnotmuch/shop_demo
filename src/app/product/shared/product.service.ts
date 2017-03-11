@@ -26,10 +26,18 @@ export class ProductService {
         return item;
       });
     }
-    console.log(this.items);
   }
 
   getSelectedItems(): Array<Product> {
     return this.items;
+  }
+
+  resetItems(): void {
+    this.items = _.map(this.items, (product: Product) => {
+      product.count = 0;
+      return product;
+    });
+
+    this.items = [];
   }
 }
