@@ -12,11 +12,15 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import { BasketComponent } from './basket/basket.component';
 import { ProductService } from "./product/shared/product.service";
+import { ProductResolver } from "./product/shared/product.resolver.service";
 
 const appRoutes: Routes = [
   {
     path: 'products',
-    component: ProductComponent
+    component: ProductComponent,
+    resolve: {
+      products: ProductResolver,
+    }
   },
   {
     path: '',
@@ -51,7 +55,10 @@ const firebaseConfig = {
       method: AuthMethods.Popup
     })
   ],
-  providers: [ProductService],
+  providers: [
+    ProductService,
+    ProductResolver
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

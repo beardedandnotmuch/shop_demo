@@ -9,7 +9,7 @@ import { Product } from './shared/product'
 })
 
 export class ProductComponent implements OnInit {
-  products: Array<Product>;
+  products: any;
   constructor(
     private productService: ProductService
   ) {
