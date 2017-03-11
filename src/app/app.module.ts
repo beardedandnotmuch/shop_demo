@@ -13,6 +13,7 @@ import { ProductComponent } from './product/product.component';
 import { BasketComponent } from './basket/basket.component';
 import { ProductService } from "./product/shared/product.service";
 import { ProductResolver } from "./product/shared/product.resolver.service";
+import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
   {
@@ -23,8 +24,12 @@ const appRoutes: Routes = [
     }
   },
   {
+    path: 'home',
+    component: HomeComponent,
+  },
+  {
     path: '',
-    redirectTo: '/products',
+    redirectTo: '/home',
     pathMatch: 'full'
   }
 ];
@@ -40,7 +45,8 @@ const firebaseConfig = {
   declarations: [
     AppComponent,
     ProductComponent,
-    BasketComponent
+    BasketComponent,
+    HomeComponent
   ],
   entryComponents: [ BasketComponent ],
   imports: [

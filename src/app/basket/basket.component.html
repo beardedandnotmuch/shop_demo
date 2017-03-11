@@ -12,6 +12,7 @@
         pattern="[0-9]+"
         name="phone"
         [(ngModel)]="phoneNumber"
+        placeholder="Номер телефона"
         #phone="ngModel"
       >
       <small [hidden]="phone.valid || (phone.pristine && !f.submitted)" class="text-danger">
