@@ -1,10 +1,10 @@
 <h1 md-dialog-title>Корзина</h1>
-<form #f="ngForm" (ngSubmit)="order()">
+<form #f="ngForm" (ngSubmit)="order()" *ngIf="products.length">
   <div md-dialog-content>
     <div *ngFor="let product of products">
       {{product.name}} - {{product.count}} шт.
     </div>
-    <md-input-container *ngIf="products.length" class="full-width">
+    <md-input-container class="full-width">
       <input mdInput
         required
         minlength="10"
@@ -24,3 +24,6 @@
     <button color="primary" md-raised-button type="submit">Заказать</button>
   </div>
 </form>
+<div md-dialog-content *ngIf="!products.length">
+  <span> Пусто </span>
+</div>
