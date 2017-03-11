@@ -11,7 +11,7 @@ import { Product } from '../product/shared/product'
 
 export class BasketComponent implements OnInit {
   public products: Array<Product>;
-  public phoneNumber: string;
+  public phoneNumber: string = '';
   constructor(
     public dialogRef: MdDialogRef<BasketComponent>,
     private ProductService: ProductService
@@ -21,6 +21,7 @@ export class BasketComponent implements OnInit {
 
   order(): void {
     console.log('make an order');
+    console.log(this.phoneNumber);
   }
 
   ngOnInit() {

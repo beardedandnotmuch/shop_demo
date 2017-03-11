@@ -1,12 +1,25 @@
 <h1 md-dialog-title>Корзина</h1>
-<div md-dialog-content>
-  <div *ngFor="let product of products">
-    {{product.name}} - {{product.count}} шт.
+<form #f="ngForm" (ngSubmit)="order()">
+  <div md-dialog-content>
+    <div *ngFor="let product of products">
+      {{product.name}} - {{product.count}} шт.
+    </div>
+    <md-input-container *ngIf="products.length" class="full-width">
+      <input mdInput
+        required
+        minlength="10"
+        maxlength="10"
+        pattern="[0-9]+"
+        name="phone"
+        [(ngModel)]="phoneNumber"
+        #phone="ngModel"
+      >
+      <small [hidden]="phone.valid || (phone.pristine && !f.submitted)" class="text-danger">
+        Phone number is not correct
+      </small>
+    </md-input-container>
   </div>
-  <md-input-container *ngIf="products.length" class="example-full-width">
-    <input mdInput [(ngModel)]="phoneNumber" maxlength="10" placeholder="Phone number">
-  </md-input-container>
-</div>
-<div *ngIf="products.length" md-dialog-actions>
-  <button color="primary" md-raised-button (click)="order()">Заказать</button>
-</div>
+  <div *ngIf="products.length" md-dialog-actions>
+    <button color="primary" md-raised-button type="submit">Заказать</button>
+  </div>
+</form>
