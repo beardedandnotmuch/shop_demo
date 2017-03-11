@@ -3,13 +3,13 @@
     fxLayout="row"
     fxLayoutWrap
     fxLayoutAlign="space-between"
+    fxLayoutAlign.xs="space-around"
   >
-      <md-card class="example-card flex-item" *ngFor="let product of products" fxFlex="18">
+      <md-card class="example-card" *ngFor="let product of products" fxFlex="18" fxFlex.xs="90">
         <md-card-header>
           <md-card-title>
             <h3>{{ product.name }}</h3>
           </md-card-title>
-          <!-- <md-card-subtitle>Dog Breed</md-card-subtitle> -->
         </md-card-header>
         <img md-card-image src="assets/products/{{product.img}}">
         <md-card-content>
@@ -22,8 +22,5 @@
         </md-card-actions>
       </md-card>
   </div>
-  <!-- <button md-fab class="rumor_add_button" color="warn" (click)="add()"> -->
-    <!-- <md-icon>add</md-icon> -->
-  <!-- </button> -->
 </div>
 
