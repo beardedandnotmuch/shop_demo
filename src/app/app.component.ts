@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 import { MdDialog } from '@angular/material';
 import { BasketComponent } from './basket/basket.component';
-import { Product } from './product/shared/product'
-import { ProductService } from "./product/shared/product.service";
 import {
-  ActivatedRouteSnapshot,
   Event as RouterEvent,
   NavigationCancel,
   NavigationEnd,
@@ -19,18 +16,14 @@ import {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  products: Array<Product>;
   isLoading: boolean = true;
   constructor(
     public dialog: MdDialog,
-    public ProductService: ProductService,
     private router: Router
   ) {
     router.events.subscribe((event: RouterEvent) => {
       this.navigationInterceptor(event);
     });
-
-    this.products = ProductService.items;
   }
 
   openBasket() {
