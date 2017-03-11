@@ -2,8 +2,8 @@
   <div fxLayout="row" fxFlex>
     <div fxLayout="column" fxLayoutAlign="center start" fxFlex>
       <div fxLayout="row" class="nav_buttons">
+        <button md-button routerLink="products">HOME</button>
         <button md-button routerLink="products">PRODUCTS</button>
-        <button md-button routerLink="products">OTHER</button>
       </div>
     </div>
     <div fxLayout="column" fxFlex>
@@ -15,5 +15,9 @@
     </div>
   </div>
 </md-toolbar>
+
+<div class="loading-overlay" *ngIf="isLoading">
+  <md-spinner></md-spinner>
+</div>
 
 <router-outlet></router-outlet>

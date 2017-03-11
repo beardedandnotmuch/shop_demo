@@ -36,3 +36,15 @@
   height: 60px;
   border-radius: 50%;
 }
+
+.loading-overlay {
+  position: fixed;
+  z-index: 999;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
