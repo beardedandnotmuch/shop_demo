@@ -20,7 +20,7 @@ const appRoutes: Routes = [
     path: 'products',
     component: ProductComponent,
     resolve: {
-      products: ProductResolver,
+      resolvedProducts: ProductResolver,
     }
   },
   {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from './shared/product.service'
 import { Product } from './shared/product'
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -11,9 +12,9 @@ import { Product } from './shared/product'
 export class ProductComponent implements OnInit {
   products: any;
   constructor(
+    private route: ActivatedRoute,
     private productService: ProductService
   ) {
-    this.products = productService.list();
   }
 
   collect(product: Product) {
@@ -21,5 +22,6 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.products = this.route.snapshot.data['resolvedProducts'];
   }
 }
